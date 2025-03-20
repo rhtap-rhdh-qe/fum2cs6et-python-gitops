@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: fum2cs6et-python-gitops
+  description: This is GitOps manifest for fum2cs6et-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=fum2cs6et-python
+    backstage.io/kubernetes-id: fum2cs6et-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: fum2cs6et-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:fum2cs6et-python
